@@ -1,4 +1,6 @@
-package com.example.jdbcboardinginfo;
+package com.example.jdbcboardinginfo.Flight;
+
+import com.example.jdbcboardinginfo.Utils.DbUtils;
 
 import javax.sql.DataSource;
 import java.sql.*;

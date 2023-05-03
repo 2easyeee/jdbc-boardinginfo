@@ -1,4 +1,4 @@
-package com.example.jdbcboardinginfo;
+package com.example.jdbcboardinginfo.Passenger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,18 +9,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "FlightServlet", value = "/flight")
-public class FlightServlet extends HttpServlet {
+@WebServlet(name = "PassengerServlet", urlPatterns = {"/", ""})
+public class PassengerServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String passengerName = request.getParameter("passengerName");
-        FlightList list = new FlightList();
-        List<Flight> flightList = list.getData(passengerName);
+        PassengerList list = new PassengerList();
+        List<Passenger> passengerList = list.getData();
 
-        request.setAttribute("flightList", flightList);
+        request.setAttribute("passengerList", passengerList);
 
-        RequestDispatcher rd = request.getRequestDispatcher("/flight-info.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/passenger.jsp");
         rd.forward(request,response);
     }
 

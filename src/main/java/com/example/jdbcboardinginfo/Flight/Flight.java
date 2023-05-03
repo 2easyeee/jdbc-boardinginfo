@@ -1,4 +1,4 @@
-package com.example.jdbcboardinginfo;
+package com.example.jdbcboardinginfo.Flight;
 
 import java.sql.Date;
 
