@@ -1,4 +1,4 @@
-package com.example.jdbcboardinginfo;
+package com.example.jdbcboardinginfo.Flight;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

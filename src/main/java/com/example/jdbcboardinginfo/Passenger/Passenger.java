@@ -1,4 +1,4 @@
-package com.example.jdbcboardinginfo;
+package com.example.jdbcboardinginfo.Passenger;
 
 public class Passenger {
     private int passengerNo;

@@ -1,4 +1,4 @@
-package com.example.jdbcboardinginfo;
+package com.example.jdbcboardinginfo.Passenger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "PassengerServlet", urlPatterns = {"/", ""})
+@WebServlet(name = "PassengerServlet", value = "/passenger")
 public class PassengerServlet extends HttpServlet {
 
     @Override

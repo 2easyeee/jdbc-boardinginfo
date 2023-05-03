@@ -1,4 +1,4 @@
-package com.example.jdbcboardinginfo;
+package com.example.jdbcboardinginfo.Utils;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 
@@ -7,15 +7,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DbUtils {
+public class DbUtilsModule12 {
     private static final DataSource DATA_SOURCE;
 
-    private DbUtils() {}
+    private DbUtilsModule12() {}
 
     public static Connection getConnection() throws SQLException {
         try {
             return DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/module06",
+                    "jdbc:mysql://localhost:3306/module12",
                     "root",
                     "9011"
             );
@@ -35,7 +35,7 @@ public class DbUtils {
             e.printStackTrace();
         }
         BasicDataSource basicDataSource = new BasicDataSource();
-        basicDataSource.setUrl("jdbc:mysql://localhost/module06");
+        basicDataSource.setUrl("jdbc:mysql://localhost/module12");
         basicDataSource.setUsername("root");
         basicDataSource.setPassword("1111");
         basicDataSource.setInitialSize(10);

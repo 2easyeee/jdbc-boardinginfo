@@ -7,7 +7,7 @@
     <title>JSP - Passenger</title>
 </head>
 <body>
-<h1>Passenger Information</h1>
+    <h1>Passenger Information</h1>
 <table>
     <thead>
     <th>PassengerNo</th>
@@ -27,4 +27,7 @@
     </tbody>
 </table>
 </body>
+<form method="get" action="/index.jsp">
+    <button type="submit">초기 화면</button>
+</form>
 </html>

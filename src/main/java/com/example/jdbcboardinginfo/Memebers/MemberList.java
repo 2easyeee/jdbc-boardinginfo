@@ -1,4 +1,6 @@
-package com.example.jdbcboardinginfo;
+package com.example.jdbcboardinginfo.Memebers;
+
+import com.example.jdbcboardinginfo.Utils.DbUtilsModule12;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -8,28 +10,29 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PassengerList {
-    List<Passenger> passengerList = new ArrayList<>();
+public class MemberList {
+    List<Member> memberList = new ArrayList<>();
 
-    public List<Passenger> getData() {
+    public List<Member> getData(int nextPage) {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet result = null;
 
         try {
-            DataSource dataSource = DbUtils.getDataSource();
+            DataSource dataSource = DbUtilsModule12.getDataSource();
             connection = dataSource.getConnection();
 
-            String sqlQuery = "SELECT PassengerNo, PassengerName, Grade, Age FROM Passenger";
+            String sqlQuery = "select id, name, city from Members LIMIT ? OFFSET ?;";
 
             statement = connection.prepareStatement(sqlQuery);
-            result = statement.executeQuery(sqlQuery);
+            statement.setInt(1,20);
+            statement.setInt(2,nextPage);
+            result = statement.executeQuery();
 
             while (result.next()) {
-                this.passengerList.add(new Passenger(result.getInt(1),
+                this.memberList.add(new Member(result.getInt(1),
                         result.getString(2),
-                        result.getInt(3),
-                        result.getInt(4)
+                        result.getString(3)
                 ));
             }
         } catch (Exception e) {
@@ -44,6 +47,6 @@ public class PassengerList {
             }
         }
 
-        return passengerList;
+        return memberList;
     }
 }
