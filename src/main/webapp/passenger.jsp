@@ -18,7 +18,7 @@
     <c:forEach var="item" items="${passengerList}">
         <tr>
             <td>${item.passengerNo}</td>
-            <td>${item.passengerName}</td>
+            <td><a href="/flight?passengerName=${item.passengerName}">${item.passengerName}</a></td>
             <td>${item.grade}</td>
             <td>${item.age}</td>
         </tr>
