@@ -32,6 +32,9 @@
             </tr>
         </c:forEach>
     </table>
+    <form method="get" action="/">
+        <button type="submit">목록으로 되돌아가기</button>
+    </form>
 </body>
 </html>
 

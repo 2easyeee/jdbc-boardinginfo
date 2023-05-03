@@ -7,6 +7,7 @@
     <title>JSP - Passenger</title>
 </head>
 <body>
+<h1>Passenger Information</h1>
 <table>
     <thead>
     <th>PassengerNo</th>
